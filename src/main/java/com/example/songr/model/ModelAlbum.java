@@ -1,11 +1,28 @@
 package com.example.songr.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class ModelAlbum {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+     int id;
     private String title;
     private String artist;
-    private int songCount;
-    private int length;
+    private String songCount;
+    private String length;
     private String imgUrl;
+
+    public ModelAlbum(String title, String artist, String songCount, String length, String imgUrl) {
+        this.title = title;
+        this.artist = artist;
+        this.songCount = songCount;
+        this.length = length;
+        this.imgUrl = imgUrl;
+    }
 
     public String getTitle() {
         return title;
@@ -23,19 +40,19 @@ public class ModelAlbum {
         this.artist = artist;
     }
 
-    public int getSongCount() {
+    public String getSongCount() {
         return songCount;
     }
 
-    public void setSongCount(int songCount) {
+    public void setSongCount(String songCount) {
         this.songCount = songCount;
     }
 
-    public int getLength() {
+    public String getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(String length) {
         this.length = length;
     }
 
@@ -44,14 +61,6 @@ public class ModelAlbum {
     }
 
     public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
-    }
-
-    public ModelAlbum(String title, String artist, int songCount, int length, String imgUrl) {
-        this.title = title;
-        this.artist = artist;
-        this.songCount = songCount;
-        this.length = length;
         this.imgUrl = imgUrl;
     }
 }
