@@ -24,10 +24,10 @@ public class Albums {
     AlbumRepository albumRepository;
 
     @GetMapping("/albums")
-    public String albums(Model model){
+    public String getAlbums(Model model){
 ArrayList<ModelAlbum> albumsData=(ArrayList<ModelAlbum>) albumRepository.findAll();
         model.addAttribute("albums",albumsData);
-        return "albumsHtml.html";
+        return "albumsHtml";
     }
 
 //    @GetMapping("/addAlbum")
@@ -50,7 +50,7 @@ ArrayList<ModelAlbum> albumsData=(ArrayList<ModelAlbum>) albumRepository.findAll
         albumRepository.save(newAlbum);
         return new RedirectView("/albums");
     }
-
+//@GetMapping("/albumss")
 //    public static String albums(Model model){
 //
 //
