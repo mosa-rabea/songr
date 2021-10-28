@@ -1,7 +1,7 @@
-package com.example.songr;
+package com.example.songr.controller;
 
 
-import com.example.songr.model.AlbumRepository;
+import com.example.songr.repositories.AlbumRepository;
 import com.example.songr.model.ModelAlbum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Controller
 public class Albums {
