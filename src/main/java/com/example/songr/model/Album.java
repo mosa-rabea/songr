@@ -1,27 +1,40 @@
 package com.example.songr.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class ModelAlbum {
+public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     int id;
+    private int id;
     private String title;
     private String artist;
-    private String songCount;
-    private String length;
+    private int songCount;
+    private int length;
     private String imgUrl;
+    @OneToMany(mappedBy ="album")
+    private List<Song> songs;
 
-    public ModelAlbum(String title, String artist, String songCount, String length, String imgUrl) {
+
+    public Album(){
+
+    }
+
+    public Album(String title, String artist, int songCount, int length, String imgUrl) {
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
         this.length = length;
         this.imgUrl = imgUrl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -40,20 +53,28 @@ public class ModelAlbum {
         this.artist = artist;
     }
 
-    public String getSongCount() {
+    public int getSongCount() {
         return songCount;
     }
 
-    public void setSongCount(String songCount) {
+    public void setSongCount(int songCount) {
         this.songCount = songCount;
     }
 
-    public String getLength() {
+    public int getLength() {
         return length;
     }
 
-    public void setLength(String length) {
+    public void setLength(int length) {
         this.length = length;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 
     public String getImgUrl() {
