@@ -1,17 +1,8 @@
 # songr
 
 
-* We use the Spring Initializr to create a new application with artifact songr .
-
-* we create  three pages ( hello, Albums,capitalize).
-
-
-* the hello page you can view its contents by enter this root : http://localhost:8080/hello 
-
-
-
-* the capitalize page you can view its contents by enter this root : http://localhost:8080/capitalize/Ahmad%20swidani 
-
-
-
-* the albums page you can view its contents by enter this root : http://localhost:8080/albums
+| assignment            | link                                |
+| -----------           | -----------                         |
+| lab-12                | [ReadMeLab12](ReadMeLab12.md)       |
+| lab-13                | [ReadMeLab13](ReadMeLab13.md)       |
+| read02b               | [read02b](read02b.md)               |
