@@ -1,30 +1,35 @@
 package com.example.songr.model;
 
 import javax.persistence.*;
-
 @Entity
 public class Song {
-
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
     private int length;
     private int trackNumber;
-    @ManyToOne
-    private ModelAlbum album;
+    @ManyToOne()
+    private Album album;
 
+    public Song(String title, int length, int trackNumber) {
+        this.title = title;
+        this.length = length;
+        this.trackNumber = trackNumber;
+
+    }
 
     public Song(){
 
     }
 
-    public Song(String title, int length, int trackNumber, ModelAlbum album) {
-        this.title = title;
-        this.length = length;
-        this.trackNumber = trackNumber;
-        this.album = album;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -51,11 +56,11 @@ public class Song {
         this.trackNumber = trackNumber;
     }
 
-    public ModelAlbum getAlbum() {
+    public Album getAlbum() {
         return album;
     }
 
-    public void setAlbum(ModelAlbum album) {
+    public void setAlbum(Album album) {
         this.album = album;
     }
 }
